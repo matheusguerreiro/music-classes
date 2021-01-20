@@ -6,7 +6,8 @@ print(f'{"#"}'*30)
 print(f'{" - (1) - Cadastrar Aluno(a) - ":^30}')
 print(f'{" - (2) - Status do Aluno(a) - ":^30}')
 print(f'{" - (3) - Comprar Aulas - ":^30}')
-print(f'{" - (4) - Sair - ":^30}')
+print(f'{" - (4) - Fazer Aula - ":^30}')
+print(f'{" - (5) - Sair - ":^30}')
 print(f'{"#"}'*30)
 while True:
     opcao = int(input('Opção: '))
@@ -14,13 +15,21 @@ while True:
         cadastrarAluno()
     elif opcao == 2:
         if len(listaAlunos) == 0:
-            print('\033[0;31mErro!\033[m \033[0;33mNenhum Aluno cadastrado...\033[m')
+            print('\033[0;31mErro!\033[m\033[0;33mNenhum Aluno cadastrado.\033[m')
         else:
             statusdoAluno()
     elif opcao == 3:
-        comprarAulas()
+        if len(listaAlunos) == 0:
+            print('\033[0;31mErro!\033[m\033[0;33mNenhum Aluno cadastrado.\033[m')
+        else:
+            comprarAulas()
     elif opcao == 4:
+        if len(listaAlunos) == 0:
+            print('\033[0;31mErro!\033[m\033[0;33mNenhum Aluno cadastrado.\033[m')
+        else:
+            fazerAula()
+    elif opcao == 5:
         print('Saindo...')
         break
     else:
-        print('Erro! Opção Inválida.')
+        print('\033[0;31mErro! Presta Atenção Tchê.\033[m')
