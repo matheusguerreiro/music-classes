@@ -1,13 +1,12 @@
 listaAlunos = []
 class aluno:
-    def __init__(self, nome, idade, contato, instrumento, totaldeaulas, aulasporfazer, quantidadedeaulas):
+    def __init__(self, nome, idade, contato, instrumento, totaldeaulas, aulasporfazer):
         self.nome = nome
         self.idade = idade
         self.contato = contato
         self.instrumento = instrumento
         self.totaldeaulas = totaldeaulas
         self.aulasporfazer = aulasporfazer
-        self.quantidadedeaulas = quantidadedeaulas
 
 def comprarAulas():
     print(f'{"cod":^5}{"nome":^32}')
@@ -16,9 +15,20 @@ def comprarAulas():
     c = int(input('cod: '))
     print(f'Aulas por Fazer: {listaAlunos[c].aulasporfazer}')
     qa = int(input('Quantidade de Aulas que vai Comprar: '))
-    af = int(input('Aulas Feitas: '))
+    listaAlunos[c].aulasporfazer += qa
     listaAlunos[c].totaldeaulas += qa
-    listaAlunos[c].aulasporfazer = qa - af
+
+
+def fazerAula():
+    print(f'{"cod":5}{"nome":32}')
+    for c in range(0, len(listaAlunos)):
+        print(f'{c:^5}{listaAlunos[c].nome:^32}')
+    c = int(input('cod: '))
+    if listaAlunos[c].aulasporfazer == 0:
+        print('\033[0;31mErro!\033[m\033[0;33mNão tem Aula por Fazer.\033[m')
+    else:
+        listaAlunos[c].aulasporfazer -= 1
+        print('\033[0;32mAula Feita!\033[m')
 
 def cadastrarAluno():
     nome = str(input('Nome: ')).strip().title()
