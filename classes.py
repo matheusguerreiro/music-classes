@@ -1,5 +1,4 @@
 listaAlunos = []
-file = open('alunos.txt', 'a')
 class aluno:
     def __init__(self, nome, idade, contato, instrumento, totaldeaulas, aulasporfazer):
         self.nome = nome
