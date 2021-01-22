@@ -27,7 +27,7 @@ def fazerAula():
     print(f'{"-"*37}')
     c = int(input('cod: '))
     if listaAlunos[c].aulasporfazer == 0:
-        print('\033[0;31mErro!\033[m\033[0;33mNão tem Aula por Fazer.\033[m')
+        print('\033[0;31mErro!\033[m\033[0;33m Não tem Aula por Fazer.\033[m')
     else:
         listaAlunos[c].aulasporfazer -= 1
         print('\033[0;32mAula Feita!\033[m')

@@ -15,17 +15,17 @@ while True:
         cadastrarAluno()
     elif opcao == 2:
         if len(listaAlunos) == 0:
-            print('\033[0;31mErro!\033[m\033[0;33mNenhum Aluno cadastrado.\033[m')
+            print('\033[0;31mErro!\033[m\033[0;33m Nenhum Aluno cadastrado.\033[m')
         else:
             statusdoAluno()
     elif opcao == 3:
         if len(listaAlunos) == 0:
-            print('\033[0;31mErro!\033[m\033[0;33mNenhum Aluno cadastrado.\033[m')
+            print('\033[0;31mErro!\033[m\033[0;33m Nenhum Aluno cadastrado.\033[m')
         else:
             comprarAulas()
     elif opcao == 4:
         if len(listaAlunos) == 0:
-            print('\033[0;31mErro!\033[m\033[0;33mNenhum Aluno cadastrado.\033[m')
+            print('\033[0;31mErro!\033[m\033[0;33m Nenhum Aluno cadastrado.\033[m')
         else:
             fazerAula()
     elif opcao == 5:
