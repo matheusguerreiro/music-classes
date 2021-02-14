@@ -1,3 +1,11 @@
+import mysql.connector
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="mgf",
+    password="password"
+)
+mycursor = mydb.cursor()
+mycursor.execute()
 from classes import *
 print(f'{"#"}'*50)
 print(f'{" - AULAS DE MÚSICA - ":^50}')
