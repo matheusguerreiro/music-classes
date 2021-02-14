@@ -7,25 +7,37 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 mycursor.execute()
 from classes import *
-print(f'{"#"}'*50)
-print(f'{" - AULAS DE MÚSICA - ":^50}')
-print(f'{" - - - sistema - - - ":^50}')
-print(f'{"#"}'*50)
-print(f'{" - (1) - Cadastrar Aluno(a) - ":^50}')
-print(f'{" - (2) - Status do Aluno(a) - ":^50}')
-print(f'{" - (3) - Comprar Aulas - ":^50}')
-print(f'{" - (4) - Sair - ":^50}')
-print(f'{"#"}'*50)
+print(f'{"#"}'*30)
+print(f'{" - AULAS DE MÚSICA - ":^30}')
+print(f'{" - - - sistema - - - ":^30}')
+print(f'{"#"}'*30)
+print(f'{" - (1) - Cadastrar Aluno(a) - ":^30}')
+print(f'{" - (2) - Status do Aluno(a) - ":^30}')
+print(f'{" - (3) - Comprar Aulas - ":^30}')
+print(f'{" - (4) - Fazer Aula - ":^30}')
+print(f'{" - (5) - Sair - ":^30}')
+print(f'{"#"}'*30)
 while True:
     opcao = int(input('Opção: '))
     if opcao == 1:
         cadastrarAluno()
     elif opcao == 2:
-        statusdoAluno()
+        if len(listaAlunos) == 0:
+            print('\033[0;31mErro!\033[m\033[0;33m Nenhum Aluno cadastrado.\033[m')
+        else:
+            statusdoAluno()
     elif opcao == 3:
-        comprarAulas()
+        if len(listaAlunos) == 0:
+            print('\033[0;31mErro!\033[m\033[0;33m Nenhum Aluno cadastrado.\033[m')
+        else:
+            comprarAulas()
     elif opcao == 4:
+        if len(listaAlunos) == 0:
+            print('\033[0;31mErro!\033[m\033[0;33m Nenhum Aluno cadastrado.\033[m')
+        else:
+            fazerAula()
+    elif opcao == 5:
         print('Saindo...')
         break
     else:
-        print('Erro! Opção Inválida.')
+        print('\033[0;31mErro! Presta Atenção Tchê.\033[m')

@@ -12,11 +12,24 @@ def comprarAulas():
     print(f'{"cod":^5}{"nome":^32}')
     for c in range(0, len(listaAlunos)):
         print(f'{c:^5}{listaAlunos[c].nome:^32}')
+    print(f'{"-" * 37}')
     c = int(input('cod: '))
-    qa = int(input('Quantidade de Aulas: '))
-    af = int(input('Aulas Feitas: '))
+    print(f'Aulas por Fazer: {listaAlunos[c].aulasporfazer}')
+    qa = int(input('Quantidade de Aulas que vai Comprar: '))
+    listaAlunos[c].aulasporfazer += qa
     listaAlunos[c].totaldeaulas += qa
-    listaAlunos[c].aulasporfazer = qa - af
+
+def fazerAula():
+    print(f'{"cod":5}{"nome":32}')
+    for c in range(0, len(listaAlunos)):
+        print(f'{c:^5}{listaAlunos[c].nome:^32}')
+    print(f'{"-"*37}')
+    c = int(input('cod: '))
+    if listaAlunos[c].aulasporfazer == 0:
+        print('\033[0;31mErro!\033[m\033[0;33m Não tem Aula por Fazer.\033[m')
+    else:
+        listaAlunos[c].aulasporfazer -= 1
+        print('\033[0;32mAula Feita!\033[m')
 
 def cadastrarAluno():
     nome = str(input('Nome: ')).strip().title()
@@ -28,9 +41,10 @@ def cadastrarAluno():
 
 def statusdoAluno():
     print(f'{"cod":^5}{"nome":^32}')
-    print(f'{"-":50}')
+    print(f'{"-"*37}')
     for c in range(0, len(listaAlunos)):
         print(f'{c:^5}{listaAlunos[c].nome:^32}')
+    print(f'{"-"*37}')
     c = int(input('cod: '))
     print(f'{"Aluno: "}{listaAlunos[c].nome}\n'
           f'{"Idade: "}{listaAlunos[c].idade}\n'
